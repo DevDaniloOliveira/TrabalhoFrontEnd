@@ -3,6 +3,8 @@
 Aplicação front-end que consome a [PokéAPI](https://pokeapi.co/) e gera **cards de personagens dinamicamente** com JavaScript.
 Projeto da disciplina **Web Development Front-End** da UniFECAF, com o tema "desenhos de sucesso dos anos 90 e 2000".
 
+**🔗 Site no ar:** https://devdanilooliveira.github.io/TrabalhoFrontEnd/
+
 ## Tecnologias
 
 - HTML5 semântico
