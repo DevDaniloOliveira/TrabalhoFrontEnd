@@ -3,7 +3,7 @@
 > Dica: grave a tela com OBS ou com a gravação do Windows (Win + Alt + R). Deixe o navegador e o VS Code abertos lado a lado.
 
 ## 0:00 – 0:20 · Abertura
-"Olá, sou [nome]. Este é o Pokédex 90s, um site em HTML, CSS e JavaScript puro que consome a PokéAPI.
+"Olá, sou [nome]. Esta é a Pokédex, um site em HTML, CSS e JavaScript puro que consome a PokéAPI.
 Escolhi Pokémon porque é um dos desenhos de maior sucesso dos anos 90."
 
 ## 0:20 – 1:10 · Projeto funcionando (requisito 1)
@@ -38,4 +38,4 @@ Escolhi Pokémon porque é um dos desenhos de maior sucesso dos anos 90."
 - Clique com o botão direito → **Exibir código-fonte da página** (Ctrl+U): o contêiner está vazio no HTML original.
 
 ## 3:50 – 4:00 · Encerramento
-"Esse foi o Pokédex 90s. O link do GitHub está na descrição. Obrigado!"
+"Essa foi a Pokédex. O link do GitHub está na descrição. Obrigado!"

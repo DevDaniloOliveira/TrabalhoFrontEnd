@@ -1,5 +1,5 @@
 /* =========================================================
-   Pokédex 90s — consumo da PokéAPI com fetch
+   Pokédex — consumo da PokéAPI com fetch
    e criação DINÂMICA dos cards (createElement + appendChild)
    ========================================================= */
 
@@ -7,7 +7,7 @@
 const API_URL = "https://pokeapi.co/api/v2";
 const PAGE_SIZE = 20;            // quantos Pokémon carregar por vez
 const MAX_POKEMON_ID = 1025;     // ignora formas alternativas (ids 10000+)
-const FAVORITES_KEY = "pokedex90s:favoritos";
+const FAVORITES_KEY = "pokedex:favoritos";
 
 // ----- Referências aos elementos do HTML -----
 const cardsContainer = document.getElementById("cards-container");
