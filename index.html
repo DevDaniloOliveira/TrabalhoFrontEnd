@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Pokédex 90s — aplicação front-end que consome a PokéAPI e gera cards de Pokémon dinamicamente com JavaScript.">
+  <title>Pokédex 90s</title>
+
+  <!-- Fontes: Press Start 2P (estilo videogame dos anos 90) + Nunito para textos -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;800&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="assets/pokeball.svg" type="image/svg+xml">
+</head>
+<body>
+
+  <!-- ===== CABEÇALHO ===== -->
+  <header class="header">
+    <div class="container header__inner">
+      <a href="#" class="logo">
+        <img src="assets/pokeball.svg" alt="" class="logo__icon" width="36" height="36">
+        <span class="logo__text">Pokédex<span class="logo__tag">90s</span></span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#sobre">Sobre</a>
+        <a href="#pokedex">Pokédex</a>
+        <a href="#api">A API</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__text">
+          <p class="hero__eyebrow">Desde 1997 na TV</p>
+          <h1 class="hero__title">Temos que pegar!</h1>
+          <p class="hero__subtitle">
+            Uma Pokédex feita com HTML, CSS e JavaScript puro, que busca dados
+            em tempo real da <strong>PokéAPI</strong> e monta cada card na hora.
+          </p>
+          <a href="#pokedex" class="btn btn--primary">Abrir a Pokédex</a>
+        </div>
+        <div class="hero__art" aria-hidden="true">
+          <img src="assets/pokeball.svg" alt="" class="hero__ball">
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE O DESENHO ===== -->
+    <section id="sobre" class="section">
+      <div class="container">
+        <h2 class="section__title">O desenho que marcou uma geração</h2>
+        <div class="about">
+          <article class="about__item">
+            <h3>📺 1997 — A estreia</h3>
+            <p>O anime <em>Pokémon</em> estreou no Japão em 1997 e chegou ao Brasil em 1999,
+              acompanhando Ash Ketchum e Pikachu na jornada para se tornar Mestre Pokémon.</p>
+          </article>
+          <article class="about__item">
+            <h3>🎮 Dos games para a TV</h3>
+            <p>A franquia nasceu nos jogos <em>Pocket Monsters Red &amp; Green</em> (1996) e virou
+              fenômeno mundial com anime, cartas colecionáveis, filmes e brinquedos.</p>
+          </article>
+          <article class="about__item">
+            <h3>🌎 Sucesso até hoje</h3>
+            <p>São mais de 1.000 Pokémon catalogados e mais de 1.200 episódios exibidos,
+              tornando Pokémon a franquia de mídia mais lucrativa da história.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== POKÉDEX (CARDS DINÂMICOS) ===== -->
+    <section id="pokedex" class="section section--alt">
+      <div class="container">
+        <h2 class="section__title">Pokédex</h2>
+
+        <!-- Controles: busca, filtro por tipo e favoritos -->
+        <form class="toolbar" id="search-form" role="search">
+          <label class="sr-only" for="search-input">Buscar Pokémon por nome ou número</label>
+          <input type="search" id="search-input" class="toolbar__input"
+                 placeholder="Buscar por nome ou nº (ex: pikachu, 25)" autocomplete="off">
+          <button type="submit" class="btn btn--primary">Buscar</button>
+
+          <label class="sr-only" for="type-select">Filtrar por tipo</label>
+          <select id="type-select" class="toolbar__select">
+            <option value="">Todos os tipos</option>
+          </select>
+
+          <button type="button" id="favorites-btn" class="btn btn--ghost" aria-pressed="false">
+            ♥ Favoritos <span id="favorites-count" class="badge">0</span>
+          </button>
+        </form>
+
+        <p id="status-message" class="status" role="status" aria-live="polite"></p>
+
+        <!-- Container que recebe os cards criados pelo JavaScript.
+             Ele começa VAZIO: nenhum card é escrito no HTML. -->
+        <div id="cards-container" class="cards"></div>
+
+        <div class="load-more">
+          <button type="button" id="load-more-btn" class="btn btn--primary" hidden>Carregar mais</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SOBRE A API ===== -->
+    <section id="api" class="section">
+      <div class="container">
+        <h2 class="section__title">Sobre a PokéAPI</h2>
+        <div class="api-info">
+          <p>
+            Os dados desta página vêm da <a href="https://pokeapi.co/" target="_blank" rel="noopener">PokéAPI</a>,
+            uma API REST pública e gratuita. Ela <strong>não exige cadastro nem token</strong>; a única regra é
+            usar com bom senso (fazer cache e evitar excesso de requisições).
+          </p>
+          <ul class="api-info__list">
+            <li><code>GET /api/v2/pokemon?limit=20&amp;offset=0</code> — lista paginada</li>
+            <li><code>GET /api/v2/pokemon/{nome ou id}</code> — detalhes de um Pokémon</li>
+            <li><code>GET /api/v2/type/{tipo}</code> — Pokémon de um tipo</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <p>Projeto acadêmico — Web Development Front-End · UniFECAF</p>
+      <p class="footer__small">Pokémon e nomes relacionados são marcas registradas de Nintendo, Game Freak e The Pokémon Company. Dados: PokéAPI.</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
