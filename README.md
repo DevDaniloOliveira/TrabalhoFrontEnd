@@ -39,8 +39,7 @@ Também funciona com a extensão **Live Server** do VS Code.
 ├── index.html            # estrutura da página
 ├── css/style.css         # estilos e responsividade
 ├── js/script.js          # consumo da API e criação dos cards
-├── assets/pokeball.svg   # ícone
-└── docs/                 # parte teórica (PDF) e roteiro do vídeo
+└── assets/pokeball.svg   # ícone
 ```
 
 ## API utilizada
